@@ -9,3 +9,4 @@
       angle
       (p (sine (/ angle 3.0)))))
 ;a) 5 times
+;b) space: O(log n); step/time: O(log n)

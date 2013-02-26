@@ -1,0 +1,2 @@
+space: O(2^n)
+step/time: O(2^n)
