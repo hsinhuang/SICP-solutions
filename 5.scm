@@ -9,5 +9,5 @@
 
 (test 0 (p))
 
-;regular order -> infinite loop
-;application order -> 0
+;regular order -> 0
+;application order -> infinite loop
