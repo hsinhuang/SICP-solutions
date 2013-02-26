@@ -1,5 +1,7 @@
 #lang scheme
 
+(provide (all-defined-out))
+
 (define (fast-expt b n)
   (define (iter e b n)
     (cond ((= n 0) e)
