@@ -1,4 +1,0 @@
-(* (expmod base (/ exp 2) m)
-   (expmod base (/ exp 2) m))
-The parameters of operator * will be calculated sequentially.
-So (expmod base (/ exp 2) m) will be calculated twice.
