@@ -1,0 +1,21 @@
+let fai = (1+5^(1/2))/2, gamma = (1-5^(1/2))/2
+prove Fib(n) = (fai^n - gamma^n)/5^(1/2) as following:
+ (1) when n = 0, Fib(0) = 0 according to the formula as above,
+     the same with the original definition
+     when n = 1, Fib(1) = 1 according to the formula as above,
+     the same with the original definition
+ (2) suppose the fomula be correct when n = k and n = k+1, k > 0
+     that is Fib(k) = (fai^k - gamma^k)/5^(1/2)
+             Fib(k+1) = (fai^(k+1) - gamma^(k+1))/5^(1/2)
+     so Fib(k+2) = Fib(k)+Fib(k+1)
+                 = ((fai^k + fai^(k+1)) - (gamma^k + gamma^(k+1)))/5^(1/2)
+     we can get that fai^k + fai^(k+1) = (1+fai) * fai^k
+                                       = fai^2 * fai^k
+                                       = fai^(k+2)
+     the same, gamma^k + gamma^(k+1) = gamma^(k+2)
+     so Fib(k+2) = (fai^(k+2) - gamma^(k+2))/5^(1/2)
+     PROVED.
+
+Fib(n) = (fai^n - gamma^n)/5^(1/2), and fai > 1, -1 < gamma < 1
+so if n -> infinite, Fib(n) -> fai^n/5^(1/2)
+PROVED.
