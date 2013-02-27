@@ -1,5 +1,6 @@
 #lang scheme
 
+(provide (all-defined-out))
 (require "7.scm")
 
 (define (sub-interval x y)
