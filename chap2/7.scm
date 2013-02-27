@@ -36,6 +36,6 @@
 (define x (make-interval 3.9 4.1))
 (define y (make-interval 0.9 1.1))
 
-(print-interval (add-interval x y))
-(print-interval (mul-interval x y))
-(print-interval (div-interval x y))
+;(print-interval (add-interval x y))
+;(print-interval (mul-interval x y))
+;(print-interval (div-interval x y))
