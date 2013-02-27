@@ -1,5 +1,7 @@
 #lang scheme
 
+(provide (all-defined-out))
+
 (define (repeated f n)
   (define (iter new-f a)
     (if (< a n)
