@@ -1,3 +1,4 @@
+Proof.
 let fai = (1+5^(1/2))/2, gamma = (1-5^(1/2))/2
 prove Fib(n) = (fai^n - gamma^n)/5^(1/2) as following:
  (1) when n = 0, Fib(0) = 0 according to the formula as above,
@@ -18,4 +19,4 @@ prove Fib(n) = (fai^n - gamma^n)/5^(1/2) as following:
 
 Fib(n) = (fai^n - gamma^n)/5^(1/2), and fai > 1, -1 < gamma < 1
 so if n -> infinite, Fib(n) -> fai^n/5^(1/2)
-PROVED.
+QED.
