@@ -30,17 +30,23 @@
 
 ;; is the list an addition formula
 (define (sum? x)
-  (and (pair? x) (eq? (car x) '+)))
+  (and (list? x) (eq? (car x) '+)))
 
 (define (addend s) (cadr s))
-(define (augend s) (caddr s))
+(define (augend s)
+  (if (= (length s) 3)
+      (caddr s)
+      (cons '+ (cddr s))))
 
 ;; is the list a multipication formula
 (define (product? x)
-  (and (pair? x) (eq? (car x) '*)))
+  (and (list? x) (eq? (car x) '*)))
 
 (define (multiplier s) (cadr s))
-(define (multiplicand s) (caddr s))
+(define (multiplicand s)
+  (if (= (length s) 3)
+      (caddr s)
+      (cons '* (cddr s))))
 
 (define (exponentiation? x)
   (and (list? x) (= (length x) 3)) (eq? (car x) '**))
