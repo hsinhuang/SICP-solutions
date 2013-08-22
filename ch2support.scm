@@ -1,15 +1,6 @@
 ;;; CODE FROM OTHER CHAPTERS OF STRUCTURE AND INTERPRETATION OF
 ;;;  COMPUTER PROGRAMS NEEDED BY CHAPTER 2
 
-#lang scheme
-
-(provide square
-         gcd
-         fib
-         nil
-         get
-         put)
-
 ;;;from chapter 1
 (define (square x) (* x x))
 
