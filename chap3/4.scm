@@ -1,0 +1,37 @@
+#lang scheme
+
+(require rackunit)
+
+(define (make-account balance password)
+  (define incorrect-pw-count 0)
+  (define (call-the-cops)
+    (display "calling the cops...\n"))
+  (define (check-incorrect-pw-count)
+    (if (>= incorrect-pw-count 7)
+        (call-the-cops)
+        #t))
+  (define (withdraw amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount))
+               balance)
+        "Insufficient funds"))
+  (define (deposit amount)
+    (set! balance (+ balance amount))
+    balance)
+  (define (dispatch pw m)
+    (if (not (eq? pw password))
+        (begin (set! incorrect-pw-count (+ incorrect-pw-count 1))
+               (check-incorrect-pw-count)
+               (lambda (x) "Incorrect password"))
+        (begin (set! incorrect-pw-count 0)
+               (cond ((eq? m 'withdraw) withdraw)
+                     ((eq? m 'deposit) deposit)
+                     (else (error "Unknown request -- MAKE-ACCOUNT"
+                                  m))))))
+  dispatch)
+
+(test-begin
+ (let ([acc (make-account 100 'secret-password)])
+   (check-equal? ((acc 'secret-password 'withdraw) 40) 60)
+   (check-equal? ((acc 'some-other-password 'deposit) 50)
+                 "Incorrect password")))
