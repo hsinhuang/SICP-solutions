@@ -1,0 +1,2 @@
+;; run immediately to register delay to agenda
+;; if not run, it will never work
