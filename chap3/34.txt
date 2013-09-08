@@ -1,0 +1,2 @@
+;; when the value of b is set, a will not be updated
+;; until one of the two a's is updated
