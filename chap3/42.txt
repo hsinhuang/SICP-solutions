@@ -1,0 +1,3 @@
+;; Safe. No difference other than that the old one serializes
+;; the procedures when you call them while the new one serializes
+;; them before even though you may never call them.

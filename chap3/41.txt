@@ -1,0 +1,4 @@
+;; No. If getting `balance' is parallel to `withdraw' or 
+;; `deposit', it may get different result, but it is still
+;; correct because it is the actual value of `balance' at
+;; that moment

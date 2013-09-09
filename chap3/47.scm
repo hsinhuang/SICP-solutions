@@ -1,0 +1,15 @@
+#lang scheme
+
+(define (make-semaphore n)
+  (let ((taken 0)
+        (m (make-mutex)))
+    (define (the-semaphore op)
+      (m 'acquire)
+      (cond ((eq? op 'acquire)
+             (if (< taken n)
+                 (set! taken (+ taken 1))
+                 (the-semaphore 'acquire)))
+            ((eq? op 'release)
+             (set! taken (- taken 1))))
+      (m 'release))
+    the-semaphore))

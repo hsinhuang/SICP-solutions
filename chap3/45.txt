@@ -1,0 +1,3 @@
+;; If we do so, we can't do more than two operations on an account
+;; at the same time.
+;; If we call `serialized-exchange', the procedures will get dead locked.
