@@ -12,12 +12,13 @@
          display-stream
          stream-filter
          stream-enumerate-interval
-         display-line)
+         display-line
+         take)
 
 (define-syntax cons-stream
   (syntax-rules ()
-      ((_ a b)
-       (cons a (delay b)))))
+    ((_ a b)
+     (cons a (delay b)))))
 
 (define (stream-car stream) (car stream))
 (define (stream-cdr stream) (force (cdr stream)))
@@ -80,3 +81,9 @@
        (apply proc (map stream-car argstreams))
        (apply stream-map
               (cons proc (map stream-cdr argstreams))))))
+
+(define (take stream n)
+  (if (= n 0)
+      null
+      (cons (stream-car stream)
+            (take (stream-cdr stream) (- n 1)))))
