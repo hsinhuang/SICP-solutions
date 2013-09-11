@@ -1,0 +1,2 @@
+;; for the arguments of `pairs' should evaluated
+;; before `pair' is called
