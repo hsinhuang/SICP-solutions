@@ -11,9 +11,17 @@
          stream-for-each
          display-stream
          stream-filter
+         scale-stream
+         add-streams
          stream-enumerate-interval
          display-line
          take)
+
+(define (scale-stream stream factor)
+  (stream-map (lambda (x) (* x factor)) stream))
+
+(define (add-streams s1 s2)
+  (stream-map + s1 s2))
 
 (define-syntax cons-stream
   (syntax-rules ()
